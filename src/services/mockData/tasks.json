@@ -1,0 +1,44 @@
+[
+  {
+    "Id": 1,
+    "eventId": 1,
+    "title": "Book venue and catering",
+    "completed": true,
+    "dueDate": "2024-02-15T00:00:00.000Z"
+  },
+  {
+    "Id": 2,
+    "eventId": 1,
+    "title": "Send speaker invitations",
+    "completed": false,
+    "dueDate": "2024-03-01T00:00:00.000Z"
+  },
+  {
+    "Id": 3,
+    "eventId": 2,
+    "title": "Prepare demo materials",
+    "completed": true,
+    "dueDate": "2024-04-15T00:00:00.000Z"
+  },
+  {
+    "Id": 4,
+    "eventId": 2,
+    "title": "Coordinate media coverage",
+    "completed": false,
+    "dueDate": "2024-04-20T00:00:00.000Z"
+  },
+  {
+    "Id": 5,
+    "eventId": 4,
+    "title": "Prepare quarterly reports",
+    "completed": false,
+    "dueDate": "2024-03-25T00:00:00.000Z"
+  },
+  {
+    "Id": 6,
+    "eventId": 5,
+    "title": "Design invitation cards",
+    "completed": false,
+    "dueDate": "2024-04-01T00:00:00.000Z"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "Id": 1,
+    "title": "Annual Tech Conference 2024",
+    "date": "2024-06-15T09:00:00.000Z",
+    "description": "A comprehensive technology conference featuring industry leaders, networking opportunities, and the latest tech innovations.",
+    "budget": 25000,
+    "status": "Planning",
+    "createdAt": "2024-01-15T10:30:00.000Z",
+    "updatedAt": "2024-01-20T14:15:00.000Z"
+  },
+  {
+    "Id": 2,
+    "title": "Product Launch Event",
+    "date": "2024-04-22T18:00:00.000Z",
+    "description": "Exclusive product launch event for our new software platform with demonstrations, client presentations, and media coverage.",
+    "budget": 15000,
+    "status": "Active",
+    "createdAt": "2024-01-10T09:00:00.000Z",
+    "updatedAt": "2024-01-22T16:45:00.000Z"
+  },
+  {
+    "Id": 3,
+    "title": "Holiday Company Party",
+    "date": "2023-12-20T19:00:00.000Z",
+    "description": "Annual holiday celebration for employees and their families with dinner, entertainment, and awards ceremony.",
+    "budget": 8000,
+    "status": "Completed",
+    "createdAt": "2023-10-15T11:20:00.000Z",
+    "updatedAt": "2023-12-21T08:30:00.000Z"
+  },
+  {
+    "Id": 4,
+    "title": "Quarterly Business Review",
+    "date": "2024-03-28T14:00:00.000Z",
+    "description": "Quarterly review meeting with stakeholders, performance analysis, and strategic planning for Q2.",
+    "budget": 3500,
+    "status": "Planning",
+    "createdAt": "2024-01-25T13:10:00.000Z",
+    "updatedAt": "2024-01-28T10:20:00.000Z"
+  },
+  {
+    "Id": 5,
+    "title": "Customer Appreciation Dinner",
+    "date": "2024-05-10T18:30:00.000Z",
+    "description": "Elegant dinner event to thank our top customers for their continued partnership and loyalty.",
+    "budget": 12000,
+    "status": "Planning",
+    "createdAt": "2024-01-20T15:45:00.000Z",
+    "updatedAt": "2024-01-30T12:00:00.000Z"
+  },
+  {
+    "Id": 6,
+    "title": "Team Building Workshop",
+    "date": "2024-02-14T10:00:00.000Z",
+    "description": "Interactive team building workshop focused on collaboration, communication, and leadership development.",
+    "budget": 4500,
+    "status": "Active",
+    "createdAt": "2024-01-05T08:15:00.000Z",
+    "updatedAt": "2024-02-01T09:30:00.000Z"
+  }
+]
