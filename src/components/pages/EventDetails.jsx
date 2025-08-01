@@ -858,11 +858,10 @@ const completedTasks = tasks.filter(task => task.completed).length;
                 <Button onClick={handleCreateExpense}>
                   {editingExpense ? 'Update' : 'Add'} Expense
                 </Button>
-              </div>
+</div>
             </div>
           </div>
         </div>
-      )}
       )}
     </div>
   );
