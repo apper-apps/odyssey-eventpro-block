@@ -6,6 +6,7 @@ import Badge from "@/components/atoms/Badge";
 import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import ApperIcon from "@/components/ApperIcon";
+import EventModal from "@/components/organisms/EventModal";
 import eventService from "@/services/api/eventService";
 import { format } from "date-fns";
 import { toast } from "react-toastify";
@@ -13,11 +14,12 @@ import { toast } from "react-toastify";
 const EventDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [event, setEvent] = useState(null);
+const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [editingEvent, setEditingEvent] = useState(null);
 
-  const loadEvent = async () => {
+const loadEvent = async () => {
     try {
       setLoading(true);
       setError("");
@@ -31,12 +33,23 @@ const EventDetails = () => {
     }
   };
 
+  const handleEditEvent = async (eventData) => {
+    try {
+      const updatedEvent = await eventService.update(event.Id, eventData);
+      setEvent(updatedEvent);
+      toast.success("Event updated successfully!");
+      setEditingEvent(null);
+    } catch (err) {
+      toast.error("Failed to update event");
+      console.error("Update event error:", err);
+    }
+  };
+
   useEffect(() => {
     if (id) {
       loadEvent();
     }
   }, [id]);
-
   const getStatusVariant = (status) => {
     switch (status) {
       case "Active":
@@ -59,8 +72,8 @@ const EventDetails = () => {
     }).format(amount);
   };
 
-  const handleEdit = () => {
-    toast.info("Edit functionality will be implemented soon");
+const handleEdit = () => {
+    setEditingEvent(event);
   };
 
   if (loading) return <Loading />;
@@ -80,7 +93,7 @@ const EventDetails = () => {
             Back to Events
           </Link>
         </div>
-        <Button onClick={handleEdit} className="sm:w-auto">
+<Button onClick={handleEdit} className="sm:w-auto">
           <ApperIcon name="Edit" className="h-4 w-4 mr-2" />
           Edit Event
         </Button>
@@ -188,11 +201,19 @@ const EventDetails = () => {
             Back to Events
           </Button>
         </Link>
-        <Button onClick={handleEdit} className="w-full sm:w-auto">
+<Button onClick={handleEdit} className="w-full sm:w-auto">
           <ApperIcon name="Edit" className="h-4 w-4 mr-2" />
           Edit Event
         </Button>
       </div>
+
+      <EventModal
+        isOpen={!!editingEvent}
+        onClose={() => setEditingEvent(null)}
+        onSubmit={handleEditEvent}
+        event={editingEvent}
+        mode="edit"
+      />
     </div>
   );
 };

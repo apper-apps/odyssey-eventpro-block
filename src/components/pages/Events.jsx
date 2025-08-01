@@ -11,13 +11,14 @@ import ApperIcon from "@/components/ApperIcon";
 import eventService from "@/services/api/eventService";
 import { toast } from "react-toastify";
 const Events = () => {
-  const [events, setEvents] = useState([]);
+const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingEvent, setEditingEvent] = useState(null);
 
   const loadEvents = async () => {
     try {
@@ -65,7 +66,7 @@ const Events = () => {
     setStatusFilter(e.target.value);
   };
 
-  const handleCreateEvent = async (eventData) => {
+const handleCreateEvent = async (eventData) => {
     try {
       const newEvent = await eventService.create(eventData);
       setEvents(prev => [newEvent, ...prev]);
@@ -73,6 +74,20 @@ const Events = () => {
     } catch (err) {
       toast.error("Failed to create event");
       console.error("Create event error:", err);
+    }
+  };
+
+  const handleEditEvent = async (eventData) => {
+    try {
+      const updatedEvent = await eventService.update(editingEvent.Id, eventData);
+      setEvents(prev => prev.map(event => 
+        event.Id === editingEvent.Id ? updatedEvent : event
+      ));
+      toast.success("Event updated successfully!");
+      setEditingEvent(null);
+    } catch (err) {
+      toast.error("Failed to update event");
+      console.error("Update event error:", err);
     }
   };
 
@@ -140,17 +155,23 @@ const Events = () => {
           icon="Calendar"
         />
       ) : (
-        <EventsTable
+<EventsTable
           events={filteredEvents}
           onDelete={handleDeleteEvent}
+          onEdit={setEditingEvent}
         />
       )}
 
       {/* Create Event Modal */}
-      <EventModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSubmit={handleCreateEvent}
+<EventModal
+        isOpen={isModalOpen || !!editingEvent}
+        onClose={() => {
+          setIsModalOpen(false);
+          setEditingEvent(null);
+        }}
+        onSubmit={editingEvent ? handleEditEvent : handleCreateEvent}
+        event={editingEvent}
+        mode={editingEvent ? 'edit' : 'create'}
       />
     </div>
   );

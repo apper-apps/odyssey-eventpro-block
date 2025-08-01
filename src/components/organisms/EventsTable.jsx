@@ -4,7 +4,7 @@ import Badge from "@/components/atoms/Badge";
 import Button from "@/components/atoms/Button";
 import ApperIcon from "@/components/ApperIcon";
 import { format } from "date-fns";
-const EventsTable = ({ events, onDelete }) => {
+const EventsTable = ({ events, onDelete, onEdit }) => {
   const getStatusVariant = (status) => {
     switch (status) {
       case "Planning":
@@ -79,7 +79,11 @@ const EventsTable = ({ events, onDelete }) => {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                   <div className="flex space-x-2">
-                    <Button variant="ghost" size="sm">
+<Button 
+                      variant="ghost" 
+                      size="sm"
+                      onClick={() => onEdit(event)}
+                    >
                       <ApperIcon name="Edit" className="h-4 w-4" />
                     </Button>
                     <Button 
