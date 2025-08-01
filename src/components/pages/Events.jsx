@@ -132,9 +132,9 @@ const handleCreateEvent = async (eventData) => {
             onChange={handleStatusFilterChange}
             className="w-full h-10 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           >
-            <option value="All">All Statuses</option>
+<option value="All">All Statuses</option>
             <option value="Planning">Planning</option>
-            <option value="Active">Active</option>
+            <option value="In Progress">In Progress</option>
             <option value="Completed">Completed</option>
             <option value="Cancelled">Cancelled</option>
           </select>

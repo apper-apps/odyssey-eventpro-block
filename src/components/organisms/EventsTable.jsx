@@ -5,11 +5,11 @@ import Button from "@/components/atoms/Button";
 import ApperIcon from "@/components/ApperIcon";
 import { format } from "date-fns";
 const EventsTable = ({ events, onDelete, onEdit }) => {
-  const getStatusVariant = (status) => {
+const getStatusVariant = (status) => {
     switch (status) {
       case "Planning":
         return "planning";
-      case "Active":
+      case "In Progress":
         return "active";
       case "Completed":
         return "completed";

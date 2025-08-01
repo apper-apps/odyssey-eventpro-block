@@ -75,7 +75,7 @@ class EventService {
       event => event.status === "Completed"
     ).length;
     const activeEvents = this.events.filter(
-      event => event.status === "Active"
+event => event.status === "In Progress"
     ).length;
 
     return {

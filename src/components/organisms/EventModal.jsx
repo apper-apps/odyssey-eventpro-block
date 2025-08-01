@@ -173,8 +173,7 @@ const EventModal = ({ isOpen, onClose, onSubmit, event = null, mode = 'create' }
               onChange={handleChange}
               className="flex w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             >
-              <option value="Planning">Planning</option>
-              <option value="Confirmed">Confirmed</option>
+<option value="Planning">Planning</option>
               <option value="In Progress">In Progress</option>
               <option value="Completed">Completed</option>
               <option value="Cancelled">Cancelled</option>

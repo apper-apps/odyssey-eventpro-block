@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import StatCard from "@/components/molecules/StatCard";
 import Card from "@/components/atoms/Card";
+import Badge from "@/components/atoms/Badge";
 import Button from "@/components/atoms/Button";
 import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
@@ -112,14 +113,18 @@ const Dashboard = () => {
                       {format(new Date(event.date), "MMM dd, yyyy 'at' h:mm a")}
                     </p>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                      event.status === "Planning" 
-                        ? "bg-yellow-100 text-yellow-800"
-                        : "bg-green-100 text-green-800"
-                    }`}>
+<div className="flex items-center space-x-2">
+                    <Badge 
+                      variant={
+                        event.status === "Planning" ? "planning" :
+                        event.status === "In Progress" ? "active" :
+                        event.status === "Completed" ? "completed" :
+                        event.status === "Cancelled" ? "cancelled" :
+                        "default"
+                      }
+                    >
                       {event.status}
-                    </span>
+                    </Badge>
                   </div>
                 </div>
               ))}
