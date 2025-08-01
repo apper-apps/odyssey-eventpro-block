@@ -1,9 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Badge from "@/components/atoms/Badge";
 import Button from "@/components/atoms/Button";
 import ApperIcon from "@/components/ApperIcon";
 import { format } from "date-fns";
-
 const EventsTable = ({ events, onDelete }) => {
   const getStatusVariant = (status) => {
     switch (status) {
@@ -52,12 +52,15 @@ const EventsTable = ({ events, onDelete }) => {
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {events.map((event) => (
-              <tr key={event.Id} className="hover:bg-gray-50 transition-colors duration-150">
+<tr key={event.Id} className="hover:bg-gray-50 transition-colors duration-150">
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div>
-                    <div className="text-sm font-medium text-gray-900">
+                    <Link 
+                      to={`/events/${event.Id}`}
+                      className="text-sm font-medium text-primary hover:text-accent transition-colors cursor-pointer"
+                    >
                       {event.title}
-                    </div>
+                    </Link>
                     <div className="text-sm text-gray-500 truncate max-w-xs">
                       {event.description}
                     </div>

@@ -4,16 +4,17 @@ import { ToastContainer } from "react-toastify";
 import Layout from "@/components/organisms/Layout";
 import Dashboard from "@/components/pages/Dashboard";
 import Events from "@/components/pages/Events";
+import EventDetails from "@/components/pages/EventDetails";
 import Tasks from "@/components/pages/Tasks";
-
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Routes>
+<Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="events" element={<Events />} />
+            <Route path="events/:id" element={<EventDetails />} />
             <Route path="tasks" element={<Tasks />} />
           </Route>
         </Routes>
