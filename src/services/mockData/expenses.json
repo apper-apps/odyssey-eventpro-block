@@ -1,0 +1,92 @@
+[
+  {
+    "Id": 1,
+    "eventId": 1,
+    "description": "Conference venue rental",
+    "amount": 8000,
+    "category": "Venue",
+    "date": "2024-01-20T10:00:00.000Z",
+    "createdAt": "2024-01-20T10:00:00.000Z"
+  },
+  {
+    "Id": 2,
+    "eventId": 1,
+    "description": "Catering for 200 attendees",
+    "amount": 5500,
+    "category": "Catering",
+    "date": "2024-01-22T14:30:00.000Z",
+    "createdAt": "2024-01-22T14:30:00.000Z"
+  },
+  {
+    "Id": 3,
+    "eventId": 1,
+    "description": "Marketing materials and signage",
+    "amount": 1200,
+    "category": "Marketing",
+    "date": "2024-01-25T09:15:00.000Z",
+    "createdAt": "2024-01-25T09:15:00.000Z"
+  },
+  {
+    "Id": 4,
+    "eventId": 2,
+    "description": "Product demo equipment",
+    "amount": 3500,
+    "category": "Equipment",
+    "date": "2024-01-15T11:20:00.000Z",
+    "createdAt": "2024-01-15T11:20:00.000Z"
+  },
+  {
+    "Id": 5,
+    "eventId": 2,
+    "description": "Launch venue booking",
+    "amount": 4200,
+    "category": "Venue",
+    "date": "2024-01-18T16:45:00.000Z",
+    "createdAt": "2024-01-18T16:45:00.000Z"
+  },
+  {
+    "Id": 6,
+    "eventId": 3,
+    "description": "Holiday party catering",
+    "amount": 4800,
+    "category": "Catering",
+    "date": "2023-12-10T13:30:00.000Z",
+    "createdAt": "2023-12-10T13:30:00.000Z"
+  },
+  {
+    "Id": 7,
+    "eventId": 3,
+    "description": "Entertainment and DJ",
+    "amount": 2100,
+    "category": "Other",
+    "date": "2023-12-15T10:00:00.000Z",
+    "createdAt": "2023-12-15T10:00:00.000Z"
+  },
+  {
+    "Id": 8,
+    "eventId": 4,
+    "description": "Meeting room rental",
+    "amount": 800,
+    "category": "Venue",
+    "date": "2024-01-28T08:00:00.000Z",
+    "createdAt": "2024-01-28T08:00:00.000Z"
+  },
+  {
+    "Id": 9,
+    "eventId": 5,
+    "description": "Fine dining venue",
+    "amount": 6500,
+    "category": "Venue",
+    "date": "2024-01-25T12:00:00.000Z",
+    "createdAt": "2024-01-25T12:00:00.000Z"
+  },
+  {
+    "Id": 10,
+    "eventId": 6,
+    "description": "Workshop facilitator fee",
+    "amount": 2800,
+    "category": "Other",
+    "date": "1/10/2024 3:30:00 PMZ",
+    "createdAt": "2024-01-10T15:30:00.000Z"
+  }
+]
