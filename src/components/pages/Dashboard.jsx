@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import StatCard from "@/components/molecules/StatCard";
 import Card from "@/components/atoms/Card";
 import Badge from "@/components/atoms/Badge";
@@ -11,11 +12,11 @@ import { format } from "date-fns";
 import eventService from "@/services/api/eventService";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [stats, setStats] = useState({});
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
   const loadDashboardData = async () => {
     try {
       setLoading(true);
@@ -136,19 +137,35 @@ const Dashboard = () => {
         <Card className="p-6">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
           <div className="space-y-3">
-            <Button variant="primary" className="w-full justify-start">
+<Button 
+              variant="primary" 
+              className="w-full justify-start"
+              onClick={() => navigate('/events')}
+            >
               <ApperIcon name="Plus" className="h-4 w-4 mr-3" />
               Create New Event
             </Button>
-            <Button variant="outline" className="w-full justify-start">
+            <Button 
+              variant="outline" 
+              className="w-full justify-start"
+              onClick={() => navigate('/events')}
+            >
               <ApperIcon name="Users" className="h-4 w-4 mr-3" />
               Manage Attendees
             </Button>
-            <Button variant="outline" className="w-full justify-start">
+            <Button 
+              variant="outline" 
+              className="w-full justify-start"
+              onClick={() => navigate('/events')}
+            >
               <ApperIcon name="FileText" className="h-4 w-4 mr-3" />
               Generate Reports
             </Button>
-            <Button variant="outline" className="w-full justify-start">
+            <Button 
+              variant="outline" 
+              className="w-full justify-start"
+              onClick={() => navigate('/events')}
+            >
               <ApperIcon name="Settings" className="h-4 w-4 mr-3" />
               Event Settings
             </Button>
