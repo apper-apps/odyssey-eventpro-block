@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AuthContext } from "@/contexts/AuthContext";
+import { AuthContext } from "../App";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 const Header = ({ onMenuClick }) => {
