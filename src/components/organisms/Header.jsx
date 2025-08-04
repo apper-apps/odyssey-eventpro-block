@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "@/contexts/AuthContext";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
-import { AuthContext } from "@/contexts/AuthContext";
 const Header = ({ onMenuClick }) => {
+  const { logout } = useContext(AuthContext);
+  
   return (
     <header className="bg-white border-b border-gray-200 h-16 flex items-center justify-between px-4 lg:px-6">
       <div className="flex items-center">
@@ -26,11 +28,10 @@ const Header = ({ onMenuClick }) => {
         <Button variant="ghost" size="sm">
           <ApperIcon name="Bell" className="h-5 w-5" />
         </Button>
-        <Button 
+<Button 
           variant="ghost" 
           size="sm"
           onClick={() => {
-            const { logout } = React.useContext(AuthContext);
             logout();
           }}
           className="text-gray-600 hover:text-gray-900"
