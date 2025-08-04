@@ -84,9 +84,9 @@ const Dashboard = () => {
       {/* Upcoming Events */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card className="p-6">
-          <div className="flex items-center justify-between mb-4">
+<div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold text-gray-900">Upcoming Events</h2>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={() => navigate('/events')}>
               <ApperIcon name="Calendar" className="h-4 w-4 mr-2" />
               View All
             </Button>
